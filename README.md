@@ -1,73 +1,151 @@
-# Welcome to your Lovable project
+📧 AI-Powered Gmail Assistant
 
-## Project info
+    An intelligent Gmail Assistant built with React (Vite + TailwindCSS) and FastAPI (Python). This assistant helps you:
+    
+    View & manage your Gmail inbox with a beautiful dashboard.
+    
+    Perform Smart Search using AI (Groq/OpenAI).
+    
+    Summarize emails & generate replies.
+    
+    Toggle Read/Unread & Starred status visually.
+    
+    Login securely using Google OAuth.
 
-**URL**: https://lovable.dev/projects/4e5a9f36-0945-4eb9-9727-097317d78129
+🚀 Features
 
-## How can I edit this code?
+    ✨ Google OAuth 2.0 Login
+    
+    📊 Glassmorphism UI Dashboard
+    
+    🔍 Smart Search (AI-Powered NLP Queries)
+    
+    📨 Summarize Emails with AI
+    
+    ✍️ Generate AI-based Replies
+    
+    🌟 Star / Unstar Emails in UI
+    
+    📩 Toggle Read / Unread Status
 
-There are several ways of editing your application.
+🛠️ Tech Stack
 
-**Use Lovable**
+    Frontend: React + Vite + TailwindCSS + Lucide Icons
+    
+    Backend: FastAPI + Python
+    
+    Google API: Gmail API (OAuth2.0)
+    
+    AI API: Groq API (Llama3-70B)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/4e5a9f36-0945-4eb9-9727-097317d78129) and start prompting.
+🗂️ Folder Structure
 
-Changes made via Lovable will be committed automatically to this repo.
+    📁 inbox-lumina/
+    ├── frontend/ (React App)
+    │   ├── src/components/
+    │   ├── src/pages/
+    │   ├── App.tsx
+    │   ├── main.tsx
+    │   └── index.html
+    ├── backend/
+    │   ├── main.py
+    │   ├── gmail_api.py
+    |   ├── config.py
+    │   └── requirements.txt
+    ├──Google-config.tsx
+    └── README.md
 
-**Use your preferred IDE**
+⚙️ Setup Instructions
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+1. Clone the Repository
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+        git clone https://github.com/AdityaHada1510/AI-Email-Assistant-React-Python.git
+        cd AI-Email-Assistant-React-Python
 
-Follow these steps:
+2. Backend Setup (Python)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+        cd backend
+        python -m venv .virtual
+        source .virtual/bin/activate  # Windows: .virtual\Scripts\activate
+        pip install -r requirements.txt
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+3. Frontend Setup (React + Vite)
 
-# Step 3: Install the necessary dependencies.
-npm i
+        cd ../frontend
+        npm install
+        npm run dev
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+4. Run Backend Server
 
-**Edit a file directly in GitHub**
+        cd ../backend
+        uvicorn main:app --reload --port 8000
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+🔐 Important Notes
 
-**Use GitHub Codespaces**
+🚫 Sensitive Files NOT Included:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+    credentials.json  → For Google API Client Secrets.
+    
+    token.pickle      → Your Gmail API token (Generated after auth).
+    
+    config.py         → For storing GROQ_API_KEY securely.
+    
+    Google Client ID (Frontend OAuth) Google-config.tsx → Must be configured in Google Cloud Console.
 
-## What technologies are used for this project?
+📝 How to Get These Files:
 
-This project is built with:
+GROQ API Key:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+    Sign up at Groq Cloud and get your API key.
+    
+    Add it to your config.py file:
+    
+    GROQ_API_KEY=your-groq-api-key
 
-## How can I deploy this project?
+Google API Credentials (OAuth 2.0):
 
-Simply open [Lovable](https://lovable.dev/projects/4e5a9f36-0945-4eb9-9727-097317d78129) and click on Share -> Publish.
+    Visit Google Cloud Console
+    
+    Create a new project.
+    
+    Enable Gmail API.
+    
+    Create OAuth Client ID (Web App).
+    
+    Download credentials.json.
 
-## Can I connect a custom domain to my Lovable project?
+token.pickle (First-Time Authorization):
 
-Yes, you can!
+    Run uvicorn main:app --reload --port 8000
+    
+    Visit http://localhost:8000/authorize in your browser.
+    
+    Authorize Gmail API.
+    
+    This will generate a token.pickle file.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Google Client ID (Frontend Login):
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+    Use the same OAuth credentials.
+    
+    Paste the Client ID in your Google-congig.tsx GoogleOAuthProvider.
+
+✅ Ready Commands
+
+    Start Frontend (React) → npm run dev
+    
+    Start Backend (FastAPI) → uvicorn main:app --reload --port 8000
+
+📸 Screenshots
+
+  <img width="1241" height="678" alt="1" src="https://github.com/user-attachments/assets/ee278959-b243-4e16-9f2d-ee84731d9978" />
+  <img width="1244" height="682" alt="2" src="https://github.com/user-attachments/assets/c105e2ed-c6e7-47f5-8924-8c3bb24c7c41" />
+  <img width="1241" height="685" alt="3" src="https://github.com/user-attachments/assets/0bb99706-6754-44b8-9812-29ea468ab941" />
+  <img width="1243" height="685" alt="4" src="https://github.com/user-attachments/assets/8bd4c77c-df94-41f5-b847-a478634d69bb" />
+  <img width="1244" height="682" alt="5" src="https://github.com/user-attachments/assets/0a10fb7a-45aa-429a-82cb-3f83130fbd45" />
+  <img width="1242" height="683" alt="6" src="https://github.com/user-attachments/assets/6cee80b2-92f8-4a71-99fb-3a5afa7523f2" />
+
+
+📌 Credits
+
+Built by Aditya Hada with ❤️ using FastAPI, React & Groq.
